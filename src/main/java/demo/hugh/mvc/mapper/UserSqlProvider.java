@@ -32,40 +32,20 @@ public class UserSqlProvider {
             sql.VALUES("id", "#{id,jdbcType=INTEGER}");
         }
         
-        if (record.getUserNo() != null) {
-            sql.VALUES("user_no", "#{userNo,jdbcType=VARCHAR}");
+        if (record.getName() != null) {
+            sql.VALUES("name", "#{name,jdbcType=VARCHAR}");
         }
         
-        if (record.getLoginName() != null) {
-            sql.VALUES("login_name", "#{loginName,jdbcType=VARCHAR}");
+        if (record.getMobile() != null) {
+            sql.VALUES("mobile", "#{mobile,jdbcType=BIGINT}");
         }
         
         if (record.getPassword() != null) {
             sql.VALUES("password", "#{password,jdbcType=VARCHAR}");
         }
         
-        if (record.getUserName() != null) {
-            sql.VALUES("user_name", "#{userName,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBirthday() != null) {
-            sql.VALUES("birthday", "#{birthday,jdbcType=TIMESTAMP}");
-        }
-        
-        if (record.getIsLunar() != null) {
-            sql.VALUES("is_lunar", "#{isLunar,jdbcType=BIT}");
-        }
-        
-        if (record.getAvatar() != null) {
-            sql.VALUES("avatar", "#{avatar,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBoundMobile() != null) {
-            sql.VALUES("bound_mobile", "#{boundMobile,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBoundEmail() != null) {
-            sql.VALUES("bound_email", "#{boundEmail,jdbcType=VARCHAR}");
+        if (record.getOpenid() != null) {
+            sql.VALUES("openid", "#{openid,jdbcType=VARCHAR}");
         }
         
         return sql.toString();
@@ -78,15 +58,10 @@ public class UserSqlProvider {
         } else {
             sql.SELECT("id");
         }
-        sql.SELECT("user_no");
-        sql.SELECT("login_name");
+        sql.SELECT("name");
+        sql.SELECT("mobile");
         sql.SELECT("password");
-        sql.SELECT("user_name");
-        sql.SELECT("birthday");
-        sql.SELECT("is_lunar");
-        sql.SELECT("avatar");
-        sql.SELECT("bound_mobile");
-        sql.SELECT("bound_email");
+        sql.SELECT("openid");
         sql.FROM("user");
         applyWhere(sql, example, false);
         
@@ -108,40 +83,20 @@ public class UserSqlProvider {
             sql.SET("id = #{record.id,jdbcType=INTEGER}");
         }
         
-        if (record.getUserNo() != null) {
-            sql.SET("user_no = #{record.userNo,jdbcType=VARCHAR}");
+        if (record.getName() != null) {
+            sql.SET("name = #{record.name,jdbcType=VARCHAR}");
         }
         
-        if (record.getLoginName() != null) {
-            sql.SET("login_name = #{record.loginName,jdbcType=VARCHAR}");
+        if (record.getMobile() != null) {
+            sql.SET("mobile = #{record.mobile,jdbcType=BIGINT}");
         }
         
         if (record.getPassword() != null) {
             sql.SET("password = #{record.password,jdbcType=VARCHAR}");
         }
         
-        if (record.getUserName() != null) {
-            sql.SET("user_name = #{record.userName,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBirthday() != null) {
-            sql.SET("birthday = #{record.birthday,jdbcType=TIMESTAMP}");
-        }
-        
-        if (record.getIsLunar() != null) {
-            sql.SET("is_lunar = #{record.isLunar,jdbcType=BIT}");
-        }
-        
-        if (record.getAvatar() != null) {
-            sql.SET("avatar = #{record.avatar,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBoundMobile() != null) {
-            sql.SET("bound_mobile = #{record.boundMobile,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBoundEmail() != null) {
-            sql.SET("bound_email = #{record.boundEmail,jdbcType=VARCHAR}");
+        if (record.getOpenid() != null) {
+            sql.SET("openid = #{record.openid,jdbcType=VARCHAR}");
         }
         
         applyWhere(sql, example, true);
@@ -153,15 +108,10 @@ public class UserSqlProvider {
         sql.UPDATE("user");
         
         sql.SET("id = #{record.id,jdbcType=INTEGER}");
-        sql.SET("user_no = #{record.userNo,jdbcType=VARCHAR}");
-        sql.SET("login_name = #{record.loginName,jdbcType=VARCHAR}");
+        sql.SET("name = #{record.name,jdbcType=VARCHAR}");
+        sql.SET("mobile = #{record.mobile,jdbcType=BIGINT}");
         sql.SET("password = #{record.password,jdbcType=VARCHAR}");
-        sql.SET("user_name = #{record.userName,jdbcType=VARCHAR}");
-        sql.SET("birthday = #{record.birthday,jdbcType=TIMESTAMP}");
-        sql.SET("is_lunar = #{record.isLunar,jdbcType=BIT}");
-        sql.SET("avatar = #{record.avatar,jdbcType=VARCHAR}");
-        sql.SET("bound_mobile = #{record.boundMobile,jdbcType=VARCHAR}");
-        sql.SET("bound_email = #{record.boundEmail,jdbcType=VARCHAR}");
+        sql.SET("openid = #{record.openid,jdbcType=VARCHAR}");
         
         UserExample example = (UserExample) parameter.get("example");
         applyWhere(sql, example, true);
@@ -172,40 +122,20 @@ public class UserSqlProvider {
         SQL sql = new SQL();
         sql.UPDATE("user");
         
-        if (record.getUserNo() != null) {
-            sql.SET("user_no = #{userNo,jdbcType=VARCHAR}");
+        if (record.getName() != null) {
+            sql.SET("name = #{name,jdbcType=VARCHAR}");
         }
         
-        if (record.getLoginName() != null) {
-            sql.SET("login_name = #{loginName,jdbcType=VARCHAR}");
+        if (record.getMobile() != null) {
+            sql.SET("mobile = #{mobile,jdbcType=BIGINT}");
         }
         
         if (record.getPassword() != null) {
             sql.SET("password = #{password,jdbcType=VARCHAR}");
         }
         
-        if (record.getUserName() != null) {
-            sql.SET("user_name = #{userName,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBirthday() != null) {
-            sql.SET("birthday = #{birthday,jdbcType=TIMESTAMP}");
-        }
-        
-        if (record.getIsLunar() != null) {
-            sql.SET("is_lunar = #{isLunar,jdbcType=BIT}");
-        }
-        
-        if (record.getAvatar() != null) {
-            sql.SET("avatar = #{avatar,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBoundMobile() != null) {
-            sql.SET("bound_mobile = #{boundMobile,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getBoundEmail() != null) {
-            sql.SET("bound_email = #{boundEmail,jdbcType=VARCHAR}");
+        if (record.getOpenid() != null) {
+            sql.SET("openid = #{openid,jdbcType=VARCHAR}");
         }
         
         sql.WHERE("id = #{id,jdbcType=INTEGER}");

@@ -9,29 +9,17 @@
 		</commentGenerator>
 
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/boot-mvc" userId="root"
+			connectionURL="jdbc:mysql://localhost:3306/jyt-shop" userId="root"
 			password="root" />
     <javaTypeResolver>
   		<property name="forceBigDecimals" value="false" />
    </javaTypeResolver>
-    <javaModelGenerator targetPackage="demo.hugh.mvc.po" targetProject="spring-boot-mvc" />
-    <sqlMapGenerator targetPackage="demo.hugh.mvc.mapper" targetProject="spring-boot-mvc" />
-    <javaClientGenerator targetPackage="demo.hugh.mvc.mapper" targetProject="spring-boot-mvc" type="ANNOTATEDMAPPER" >
+    <javaModelGenerator targetPackage="demo.hugh.mvc.po" targetProject="JytShop" />
+    <sqlMapGenerator targetPackage="demo.hugh.mvc.mapper" targetProject="JytShop" />
+    <javaClientGenerator targetPackage="demo.hugh.mvc.mapper" targetProject="JytShop" type="ANNOTATEDMAPPER" >
     </javaClientGenerator>
     
-    <!-- <table tableName="user" >
-    </table>  -->
-    <table tableName="address" >
-    </table>
-    <table tableName="area" >
-    </table>
-    <table tableName="career" >
-    </table>
-    <table tableName="contacts" >
-    </table>
-    <table tableName="relation" >
-    </table>
-    <table tableName="relationship" >
+    <table tableName="user" >
     </table>
   </context>
 </generatorConfiguration>

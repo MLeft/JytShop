@@ -5,4 +5,6 @@ import demo.hugh.mvc.po.User;
 public interface UserService {
 
 	User getUserByName(String name);
+
+	User getUserByMobile(Long mobile);
 }

@@ -1,1 +1,34 @@
-[demo-mvc] DEBUG 2017-06-20 23:06:52,509 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 01:01:23,791 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 21:45:21,943 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 22:17:12,900 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 22:34:44,429 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 22:58:16,598 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:00:40,770 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:03:31,100 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] INFO 2017-06-21 23:05:44,319 [http-nio-7070-exec-5] DruidDataSource.init(669) | {dataSource-1} inited
+[demo-mvc] DEBUG 2017-06-21 23:06:41,030 [http-nio-7070-exec-3] LoginController.register(65) | ---请求参数:{"mobile":13817435543,"password":"1"}
+[demo-mvc] DEBUG 2017-06-21 23:07:20,262 [http-nio-7070-exec-10] LoginController.register(65) | ---请求参数:{"mobile":13817435543,"password":"1"}
+[demo-mvc] INFO 2017-06-21 23:08:21,220 [Thread-19] DruidDataSource.close(1385) | {dataSource-1} closed
+[demo-mvc] DEBUG 2017-06-21 23:08:25,342 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:08:33,335 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:09:18,993 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:09:36,020 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:10:15,564 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:10:23,596 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:11:32,341 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:11:52,000 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:12:06,131 [http-nio-7070-exec-7] LoginController.register(65) | ---请求参数:{"mobile":13817435543,"password":"1"}
+[demo-mvc] INFO 2017-06-21 23:12:06,257 [http-nio-7070-exec-7] DruidDataSource.init(669) | {dataSource-1} inited
+[demo-mvc] DEBUG 2017-06-21 23:12:06,617 [http-nio-7070-exec-7] LoginController.register(72) | 插入后的user: {"mobile":13817435543,"name":"用户_13817435543","password":"1"}
+[demo-mvc] INFO 2017-06-21 23:12:37,183 [Thread-9] DruidDataSource.close(1385) | {dataSource-1} closed
+[demo-mvc] DEBUG 2017-06-21 23:12:38,164 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:13:22,271 [http-nio-7070-exec-1] LoginController.register(65) | ---请求参数:{"mobile":13817435543,"password":"1"}
+[demo-mvc] INFO 2017-06-21 23:13:22,288 [http-nio-7070-exec-1] DruidDataSource.init(669) | {dataSource-2} inited
+[demo-mvc] ERROR 2017-06-21 23:13:22,445 [http-nio-7070-exec-1] LoginController.register(80) | 手机号13817435543已被用户用户_13817435543注册
+[demo-mvc] INFO 2017-06-21 23:13:42,214 [Thread-14] DruidDataSource.close(1385) | {dataSource-2} closed
+[demo-mvc] DEBUG 2017-06-21 23:13:44,190 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] DEBUG 2017-06-21 23:14:47,095 [restartedMain] DataBaseConfig.dataSource(33) | Configuring Datasource
+[demo-mvc] INFO 2017-06-21 23:15:46,295 [http-nio-7070-exec-1] DruidDataSource.init(669) | {dataSource-3} inited
+[demo-mvc] INFO 2017-06-21 23:15:46,349 [http-nio-7070-exec-1] LoginController.login_post(51) | 你好, 用户_13817435543
+[demo-mvc] DEBUG 2017-06-21 23:16:56,990 [http-nio-7070-exec-4] LoginController.register(65) | ---请求参数:{"mobile":13817435543,"password":"1"}
+[demo-mvc] ERROR 2017-06-21 23:16:57,041 [http-nio-7070-exec-4] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册

@@ -1,7 +1,5 @@
 package demo.hugh.mvc.po;
 
-import java.util.Date;
-
 public class User {
     /**
      * <pre>
@@ -14,21 +12,21 @@ public class User {
 
     /**
      * <pre>
-     * 用户号，全局唯一，只允许字母和数字
-     * 表字段 : user.user_no
+     * 
+     * 表字段 : user.name
      * </pre>
      * 
      */
-    private String userNo;
+    private String name;
 
     /**
      * <pre>
      * 
-     * 表字段 : user.login_name
+     * 表字段 : user.mobile
      * </pre>
      * 
      */
-    private String loginName;
+    private Long mobile;
 
     /**
      * <pre>
@@ -41,57 +39,12 @@ public class User {
 
     /**
      * <pre>
-     * 用于显示的用户名
-     * 表字段 : user.user_name
+     * 
+     * 表字段 : user.openid
      * </pre>
      * 
      */
-    private String userName;
-
-    /**
-     * <pre>
-     * 
-     * 表字段 : user.birthday
-     * </pre>
-     * 
-     */
-    private Date birthday;
-
-    /**
-     * <pre>
-     * 是否农历生日
-     * 表字段 : user.is_lunar
-     * </pre>
-     * 
-     */
-    private Boolean isLunar;
-
-    /**
-     * <pre>
-     * 用户头像
-     * 表字段 : user.avatar
-     * </pre>
-     * 
-     */
-    private String avatar;
-
-    /**
-     * <pre>
-     * 
-     * 表字段 : user.bound_mobile
-     * </pre>
-     * 
-     */
-    private String boundMobile;
-
-    /**
-     * <pre>
-     * 
-     * 表字段 : user.bound_email
-     * </pre>
-     * 
-     */
-    private String boundEmail;
+    private String openid;
 
     public Integer getId() {
         return id;
@@ -101,20 +54,20 @@ public class User {
         this.id = id;
     }
 
-    public String getUserNo() {
-        return userNo;
+    public String getName() {
+        return name;
     }
 
-    public void setUserNo(String userNo) {
-        this.userNo = userNo;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLoginName() {
-        return loginName;
+    public Long getMobile() {
+        return mobile;
     }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
+    public void setMobile(Long mobile) {
+        this.mobile = mobile;
     }
 
     public String getPassword() {
@@ -125,51 +78,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getOpenid() {
+        return openid;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public Boolean getIsLunar() {
-        return isLunar;
-    }
-
-    public void setIsLunar(Boolean isLunar) {
-        this.isLunar = isLunar;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    public String getBoundMobile() {
-        return boundMobile;
-    }
-
-    public void setBoundMobile(String boundMobile) {
-        this.boundMobile = boundMobile;
-    }
-
-    public String getBoundEmail() {
-        return boundEmail;
-    }
-
-    public void setBoundEmail(String boundEmail) {
-        this.boundEmail = boundEmail;
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 }

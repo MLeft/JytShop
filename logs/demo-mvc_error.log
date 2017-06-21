@@ -1,1 +1,2 @@
-[demo-mvc] ERROR 2016-12-11 12:03:30,018 [http-nio-7070-exec-1] LoginController.login_post(38) | 用户张旭东未找到
+[demo-mvc] ERROR 2017-06-21 23:13:22,445 [http-nio-7070-exec-1] LoginController.register(80) | 手机号13817435543已被用户用户_13817435543注册
+[demo-mvc] ERROR 2017-06-21 23:16:57,041 [http-nio-7070-exec-4] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册
