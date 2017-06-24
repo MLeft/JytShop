@@ -1,2 +1,6 @@
-[demo-mvc] ERROR 2017-06-21 23:13:22,445 [http-nio-7070-exec-1] LoginController.register(80) | 手机号13817435543已被用户用户_13817435543注册
-[demo-mvc] ERROR 2017-06-21 23:16:57,041 [http-nio-7070-exec-4] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册
+[demo-mvc] ERROR 2017-06-24 15:40:15,605 [http-nio-7070-exec-2] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册
+[demo-mvc] ERROR 2017-06-24 15:56:02,314 [http-nio-7070-exec-9] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册
+[demo-mvc] ERROR 2017-06-24 16:04:16,970 [http-nio-7070-exec-4] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册
+[demo-mvc] ERROR 2017-06-24 16:06:31,013 [http-nio-7070-exec-6] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册
+[demo-mvc] ERROR 2017-06-24 16:06:41,967 [http-nio-7070-exec-8] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册
+[demo-mvc] ERROR 2017-06-24 16:08:16,128 [http-nio-7070-exec-9] LoginController.register(80) | 手机号 13817435543 已被用户 用户_13817435543 注册

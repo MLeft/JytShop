@@ -4,11 +4,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,23 +30,23 @@ public class LoginController {
 	@Resource
 	UserDao userDaoImpl;
 
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
-	public Object login_post(Model model, HttpServletRequest request,
-			@RequestParam(required = false) String name,
-			@RequestParam(required = false) String pwd) {
+	public Object login_post(HttpServletRequest request, @ModelAttribute User user) {
 
 		// log.debug("---请求参数:" + JSON.toJSONString(request.getParameterMap()));
 		BaseResBean res = new BaseResBean("S0000000", "登录成功");
 
-		User user = userServiceImpl.getUserByName(name);
-		if (user == null) {
-			log.error("用户" + name + "未找到");
+		User _user = userServiceImpl.getUserByMobile(user.getMobile());
+		if (_user == null) {
+			log.error("根据手机号" + user.getMobile() + "未找到用户");
 			res.setCode("E9999999");
 			res.setMsg("登录失败,用户名或密码错误");
 			return res;
-		} else if (user.getPassword().equals(pwd)) {
-			log.info("你好, " + user.getName());
+		} else if (_user.getPassword().equals(user.getPassword())) {
+			log.info("你好, " + _user.getName());
+			// 放入session
+			request.getSession().setAttribute(ContextConfig.SESSION_USER, _user);
 			return res;
 		} else {
 			res.setCode("E9999999");
