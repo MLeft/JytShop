@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>用户注册</title>
+
+<!-- Bootstrap -->
+<link href="/lib/bootstrap/v3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/lib/jquery/v3.0.0/js/jquery.min.js"></script>
+<!-- <script src="lib/jquery/v1.11.3/js/jquery.min.js"></script> -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/lib/bootstrap/v3.3.5/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+.login {
+	background-color: rgba(0, 173, 255, 0.18);
+	margin-top: 40px;
+	padding-bottom: 20px;
+	border-radius: 8px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row" id="login_div">
+			<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 login">
+				<h3 class="text-center">请注册</h3>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+							<input class="form-control" name="mobile" type="tel" placeholder="手机号">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+							<input class="form-control" name="password" type="password" placeholder="密码">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+							<input class="form-control" name="_password" type="password" placeholder="确认密码">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-6 col-sm-offset-1 col-sm-5 col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4">
+							<button class="btn btn-primary btn-block" id="btn_register">注册</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="register.html.js" ></script>
+</body>
+</html>
