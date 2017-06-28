@@ -1,32 +1,32 @@
 package demo.hugh.mvc.mapper;
 
-import demo.hugh.mvc.po.Address;
-import demo.hugh.mvc.po.AddressExample.Criteria;
-import demo.hugh.mvc.po.AddressExample.Criterion;
-import demo.hugh.mvc.po.AddressExample;
+import demo.hugh.mvc.po.Goods;
+import demo.hugh.mvc.po.GoodsExample.Criteria;
+import demo.hugh.mvc.po.GoodsExample.Criterion;
+import demo.hugh.mvc.po.GoodsExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class AddressSqlProvider {
+public class GoodsSqlProvider {
 
-    public String countByExample(AddressExample example) {
+    public String countByExample(GoodsExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("address");
+        sql.SELECT("count(*)").FROM("goods");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(AddressExample example) {
+    public String deleteByExample(GoodsExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("address");
+        sql.DELETE_FROM("goods");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(Address record) {
+    public String insertSelective(Goods record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("address");
+        sql.INSERT_INTO("goods");
         
         if (record.getId() != null) {
             sql.VALUES("id", "#{id,jdbcType=INTEGER}");
@@ -36,18 +36,30 @@ public class AddressSqlProvider {
             sql.VALUES("name", "#{name,jdbcType=VARCHAR}");
         }
         
-        if (record.getMobile() != null) {
-            sql.VALUES("mobile", "#{mobile,jdbcType=VARCHAR}");
+        if (record.getDescription() != null) {
+            sql.VALUES("description", "#{description,jdbcType=VARCHAR}");
         }
         
-        if (record.getAddress() != null) {
-            sql.VALUES("address", "#{address,jdbcType=VARCHAR}");
+        if (record.getPrice() != null) {
+            sql.VALUES("price", "#{price,jdbcType=DECIMAL}");
+        }
+        
+        if (record.getQuantity() != null) {
+            sql.VALUES("quantity", "#{quantity,jdbcType=INTEGER}");
+        }
+        
+        if (record.getState() != null) {
+            sql.VALUES("state", "#{state,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPicUrl() != null) {
+            sql.VALUES("pic_url", "#{picUrl,jdbcType=VARCHAR}");
         }
         
         return sql.toString();
     }
 
-    public String selectByExample(AddressExample example) {
+    public String selectByExample(GoodsExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
             sql.SELECT_DISTINCT("id");
@@ -55,9 +67,12 @@ public class AddressSqlProvider {
             sql.SELECT("id");
         }
         sql.SELECT("name");
-        sql.SELECT("mobile");
-        sql.SELECT("address");
-        sql.FROM("address");
+        sql.SELECT("description");
+        sql.SELECT("price");
+        sql.SELECT("quantity");
+        sql.SELECT("state");
+        sql.SELECT("pic_url");
+        sql.FROM("goods");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -68,11 +83,11 @@ public class AddressSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        Address record = (Address) parameter.get("record");
-        AddressExample example = (AddressExample) parameter.get("example");
+        Goods record = (Goods) parameter.get("record");
+        GoodsExample example = (GoodsExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("address");
+        sql.UPDATE("goods");
         
         if (record.getId() != null) {
             sql.SET("id = #{record.id,jdbcType=INTEGER}");
@@ -82,12 +97,24 @@ public class AddressSqlProvider {
             sql.SET("name = #{record.name,jdbcType=VARCHAR}");
         }
         
-        if (record.getMobile() != null) {
-            sql.SET("mobile = #{record.mobile,jdbcType=VARCHAR}");
+        if (record.getDescription() != null) {
+            sql.SET("description = #{record.description,jdbcType=VARCHAR}");
         }
         
-        if (record.getAddress() != null) {
-            sql.SET("address = #{record.address,jdbcType=VARCHAR}");
+        if (record.getPrice() != null) {
+            sql.SET("price = #{record.price,jdbcType=DECIMAL}");
+        }
+        
+        if (record.getQuantity() != null) {
+            sql.SET("quantity = #{record.quantity,jdbcType=INTEGER}");
+        }
+        
+        if (record.getState() != null) {
+            sql.SET("state = #{record.state,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPicUrl() != null) {
+            sql.SET("pic_url = #{record.picUrl,jdbcType=VARCHAR}");
         }
         
         applyWhere(sql, example, true);
@@ -96,32 +123,47 @@ public class AddressSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("address");
+        sql.UPDATE("goods");
         
         sql.SET("id = #{record.id,jdbcType=INTEGER}");
         sql.SET("name = #{record.name,jdbcType=VARCHAR}");
-        sql.SET("mobile = #{record.mobile,jdbcType=VARCHAR}");
-        sql.SET("address = #{record.address,jdbcType=VARCHAR}");
+        sql.SET("description = #{record.description,jdbcType=VARCHAR}");
+        sql.SET("price = #{record.price,jdbcType=DECIMAL}");
+        sql.SET("quantity = #{record.quantity,jdbcType=INTEGER}");
+        sql.SET("state = #{record.state,jdbcType=VARCHAR}");
+        sql.SET("pic_url = #{record.picUrl,jdbcType=VARCHAR}");
         
-        AddressExample example = (AddressExample) parameter.get("example");
+        GoodsExample example = (GoodsExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(Address record) {
+    public String updateByPrimaryKeySelective(Goods record) {
         SQL sql = new SQL();
-        sql.UPDATE("address");
+        sql.UPDATE("goods");
         
         if (record.getName() != null) {
             sql.SET("name = #{name,jdbcType=VARCHAR}");
         }
         
-        if (record.getMobile() != null) {
-            sql.SET("mobile = #{mobile,jdbcType=VARCHAR}");
+        if (record.getDescription() != null) {
+            sql.SET("description = #{description,jdbcType=VARCHAR}");
         }
         
-        if (record.getAddress() != null) {
-            sql.SET("address = #{address,jdbcType=VARCHAR}");
+        if (record.getPrice() != null) {
+            sql.SET("price = #{price,jdbcType=DECIMAL}");
+        }
+        
+        if (record.getQuantity() != null) {
+            sql.SET("quantity = #{quantity,jdbcType=INTEGER}");
+        }
+        
+        if (record.getState() != null) {
+            sql.SET("state = #{state,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPicUrl() != null) {
+            sql.SET("pic_url = #{picUrl,jdbcType=VARCHAR}");
         }
         
         sql.WHERE("id = #{id,jdbcType=INTEGER}");
@@ -129,7 +171,7 @@ public class AddressSqlProvider {
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, AddressExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, GoodsExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }

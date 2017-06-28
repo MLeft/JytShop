@@ -1,63 +1,73 @@
 package demo.hugh.mvc.mapper;
 
-import demo.hugh.mvc.po.Address;
-import demo.hugh.mvc.po.AddressExample.Criteria;
-import demo.hugh.mvc.po.AddressExample.Criterion;
-import demo.hugh.mvc.po.AddressExample;
+import demo.hugh.mvc.po.ChannelParam;
+import demo.hugh.mvc.po.ChannelParamExample.Criteria;
+import demo.hugh.mvc.po.ChannelParamExample.Criterion;
+import demo.hugh.mvc.po.ChannelParamExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class AddressSqlProvider {
+public class ChannelParamSqlProvider {
 
-    public String countByExample(AddressExample example) {
+    public String countByExample(ChannelParamExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("address");
+        sql.SELECT("count(*)").FROM("channel_param");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(AddressExample example) {
+    public String deleteByExample(ChannelParamExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("address");
+        sql.DELETE_FROM("channel_param");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(Address record) {
+    public String insertSelective(ChannelParam record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("address");
+        sql.INSERT_INTO("channel_param");
         
-        if (record.getId() != null) {
-            sql.VALUES("id", "#{id,jdbcType=INTEGER}");
+        if (record.getPayChannel() != null) {
+            sql.VALUES("pay_channel", "#{payChannel,jdbcType=VARCHAR}");
         }
         
-        if (record.getName() != null) {
-            sql.VALUES("name", "#{name,jdbcType=VARCHAR}");
+        if (record.getPayChannelName() != null) {
+            sql.VALUES("pay_channel_name", "#{payChannelName,jdbcType=VARCHAR}");
         }
         
-        if (record.getMobile() != null) {
-            sql.VALUES("mobile", "#{mobile,jdbcType=VARCHAR}");
+        if (record.getMerchantId() != null) {
+            sql.VALUES("merchant_id", "#{merchantId,jdbcType=VARCHAR}");
         }
         
-        if (record.getAddress() != null) {
-            sql.VALUES("address", "#{address,jdbcType=VARCHAR}");
+        if (record.getPrivateKey() != null) {
+            sql.VALUES("private_key", "#{privateKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getChannelPublictKey() != null) {
+            sql.VALUES("channel_publict_key", "#{channelPublictKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPayUrl() != null) {
+            sql.VALUES("pay_url", "#{payUrl,jdbcType=VARCHAR}");
         }
         
         return sql.toString();
     }
 
-    public String selectByExample(AddressExample example) {
+    public String selectByExample(ChannelParamExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
-            sql.SELECT_DISTINCT("id");
+            sql.SELECT_DISTINCT("pay_channel");
         } else {
-            sql.SELECT("id");
+            sql.SELECT("pay_channel");
         }
-        sql.SELECT("name");
-        sql.SELECT("mobile");
-        sql.SELECT("address");
-        sql.FROM("address");
+        sql.SELECT("pay_channel_name");
+        sql.SELECT("merchant_id");
+        sql.SELECT("private_key");
+        sql.SELECT("channel_publict_key");
+        sql.SELECT("pay_url");
+        sql.FROM("channel_param");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -68,26 +78,34 @@ public class AddressSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        Address record = (Address) parameter.get("record");
-        AddressExample example = (AddressExample) parameter.get("example");
+        ChannelParam record = (ChannelParam) parameter.get("record");
+        ChannelParamExample example = (ChannelParamExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("address");
+        sql.UPDATE("channel_param");
         
-        if (record.getId() != null) {
-            sql.SET("id = #{record.id,jdbcType=INTEGER}");
+        if (record.getPayChannel() != null) {
+            sql.SET("pay_channel = #{record.payChannel,jdbcType=VARCHAR}");
         }
         
-        if (record.getName() != null) {
-            sql.SET("name = #{record.name,jdbcType=VARCHAR}");
+        if (record.getPayChannelName() != null) {
+            sql.SET("pay_channel_name = #{record.payChannelName,jdbcType=VARCHAR}");
         }
         
-        if (record.getMobile() != null) {
-            sql.SET("mobile = #{record.mobile,jdbcType=VARCHAR}");
+        if (record.getMerchantId() != null) {
+            sql.SET("merchant_id = #{record.merchantId,jdbcType=VARCHAR}");
         }
         
-        if (record.getAddress() != null) {
-            sql.SET("address = #{record.address,jdbcType=VARCHAR}");
+        if (record.getPrivateKey() != null) {
+            sql.SET("private_key = #{record.privateKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getChannelPublictKey() != null) {
+            sql.SET("channel_publict_key = #{record.channelPublictKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPayUrl() != null) {
+            sql.SET("pay_url = #{record.payUrl,jdbcType=VARCHAR}");
         }
         
         applyWhere(sql, example, true);
@@ -96,40 +114,50 @@ public class AddressSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("address");
+        sql.UPDATE("channel_param");
         
-        sql.SET("id = #{record.id,jdbcType=INTEGER}");
-        sql.SET("name = #{record.name,jdbcType=VARCHAR}");
-        sql.SET("mobile = #{record.mobile,jdbcType=VARCHAR}");
-        sql.SET("address = #{record.address,jdbcType=VARCHAR}");
+        sql.SET("pay_channel = #{record.payChannel,jdbcType=VARCHAR}");
+        sql.SET("pay_channel_name = #{record.payChannelName,jdbcType=VARCHAR}");
+        sql.SET("merchant_id = #{record.merchantId,jdbcType=VARCHAR}");
+        sql.SET("private_key = #{record.privateKey,jdbcType=VARCHAR}");
+        sql.SET("channel_publict_key = #{record.channelPublictKey,jdbcType=VARCHAR}");
+        sql.SET("pay_url = #{record.payUrl,jdbcType=VARCHAR}");
         
-        AddressExample example = (AddressExample) parameter.get("example");
+        ChannelParamExample example = (ChannelParamExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(Address record) {
+    public String updateByPrimaryKeySelective(ChannelParam record) {
         SQL sql = new SQL();
-        sql.UPDATE("address");
+        sql.UPDATE("channel_param");
         
-        if (record.getName() != null) {
-            sql.SET("name = #{name,jdbcType=VARCHAR}");
+        if (record.getPayChannelName() != null) {
+            sql.SET("pay_channel_name = #{payChannelName,jdbcType=VARCHAR}");
         }
         
-        if (record.getMobile() != null) {
-            sql.SET("mobile = #{mobile,jdbcType=VARCHAR}");
+        if (record.getMerchantId() != null) {
+            sql.SET("merchant_id = #{merchantId,jdbcType=VARCHAR}");
         }
         
-        if (record.getAddress() != null) {
-            sql.SET("address = #{address,jdbcType=VARCHAR}");
+        if (record.getPrivateKey() != null) {
+            sql.SET("private_key = #{privateKey,jdbcType=VARCHAR}");
         }
         
-        sql.WHERE("id = #{id,jdbcType=INTEGER}");
+        if (record.getChannelPublictKey() != null) {
+            sql.SET("channel_publict_key = #{channelPublictKey,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPayUrl() != null) {
+            sql.SET("pay_url = #{payUrl,jdbcType=VARCHAR}");
+        }
+        
+        sql.WHERE("pay_channel = #{payChannel,jdbcType=VARCHAR}");
         
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, AddressExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, ChannelParamExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }

@@ -18,7 +18,7 @@ import org.apache.ibatis.type.JdbcType;
 
 public interface AddressMapper {
     @SelectProvider(type=AddressSqlProvider.class, method="countByExample")
-    int countByExample(AddressExample example);
+    long countByExample(AddressExample example);
 
     @DeleteProvider(type=AddressSqlProvider.class, method="deleteByExample")
     int deleteByExample(AddressExample example);
@@ -30,14 +30,10 @@ public interface AddressMapper {
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into address (id, user_id, ",
-        "country, province, ",
-        "city, county, address, ",
-        "begin_date, end_date)",
-        "values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, ",
-        "#{country,jdbcType=INTEGER}, #{province,jdbcType=INTEGER}, ",
-        "#{city,jdbcType=INTEGER}, #{county,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, ",
-        "#{beginDate,jdbcType=DATE}, #{endDate,jdbcType=DATE})"
+        "insert into address (id, name, ",
+        "mobile, address)",
+        "values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, ",
+        "#{mobile,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR})"
     })
     int insert(Address record);
 
@@ -47,33 +43,23 @@ public interface AddressMapper {
     @SelectProvider(type=AddressSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER),
-        @Result(column="country", property="country", jdbcType=JdbcType.INTEGER),
-        @Result(column="province", property="province", jdbcType=JdbcType.INTEGER),
-        @Result(column="city", property="city", jdbcType=JdbcType.INTEGER),
-        @Result(column="county", property="county", jdbcType=JdbcType.INTEGER),
-        @Result(column="address", property="address", jdbcType=JdbcType.VARCHAR),
-        @Result(column="begin_date", property="beginDate", jdbcType=JdbcType.DATE),
-        @Result(column="end_date", property="endDate", jdbcType=JdbcType.DATE)
+        @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
+        @Result(column="mobile", property="mobile", jdbcType=JdbcType.VARCHAR),
+        @Result(column="address", property="address", jdbcType=JdbcType.VARCHAR)
     })
     List<Address> selectByExample(AddressExample example);
 
     @Select({
         "select",
-        "id, user_id, country, province, city, county, address, begin_date, end_date",
+        "id, name, mobile, address",
         "from address",
         "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER),
-        @Result(column="country", property="country", jdbcType=JdbcType.INTEGER),
-        @Result(column="province", property="province", jdbcType=JdbcType.INTEGER),
-        @Result(column="city", property="city", jdbcType=JdbcType.INTEGER),
-        @Result(column="county", property="county", jdbcType=JdbcType.INTEGER),
-        @Result(column="address", property="address", jdbcType=JdbcType.VARCHAR),
-        @Result(column="begin_date", property="beginDate", jdbcType=JdbcType.DATE),
-        @Result(column="end_date", property="endDate", jdbcType=JdbcType.DATE)
+        @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
+        @Result(column="mobile", property="mobile", jdbcType=JdbcType.VARCHAR),
+        @Result(column="address", property="address", jdbcType=JdbcType.VARCHAR)
     })
     Address selectByPrimaryKey(Integer id);
 
@@ -88,14 +74,9 @@ public interface AddressMapper {
 
     @Update({
         "update address",
-        "set user_id = #{userId,jdbcType=INTEGER},",
-          "country = #{country,jdbcType=INTEGER},",
-          "province = #{province,jdbcType=INTEGER},",
-          "city = #{city,jdbcType=INTEGER},",
-          "county = #{county,jdbcType=INTEGER},",
-          "address = #{address,jdbcType=VARCHAR},",
-          "begin_date = #{beginDate,jdbcType=DATE},",
-          "end_date = #{endDate,jdbcType=DATE}",
+        "set name = #{name,jdbcType=VARCHAR},",
+          "mobile = #{mobile,jdbcType=VARCHAR},",
+          "address = #{address,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Address record);
