@@ -19,7 +19,17 @@
     <javaClientGenerator targetPackage="demo.hugh.mvc.mapper" targetProject="JytShop" type="ANNOTATEDMAPPER" >
     </javaClientGenerator>
     
-    <table tableName="user" >
+    <!-- <table tableName="user" >
+    </table> -->
+    <table tableName="address" >
+    </table>
+    <table tableName="cart" >
+    </table>
+    <table tableName="channel_param" >
+    </table>
+    <table tableName="goods" >
+    </table>
+    <table tableName="order" >
     </table>
   </context>
 </generatorConfiguration>

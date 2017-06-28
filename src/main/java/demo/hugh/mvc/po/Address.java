@@ -1,7 +1,5 @@
 package demo.hugh.mvc.po;
 
-import java.util.Date;
-
 public class Address {
     /**
      * <pre>
@@ -14,75 +12,30 @@ public class Address {
 
     /**
      * <pre>
-     * 
-     * 表字段 : address.user_id
+     * 收货人姓名
+     * 表字段 : address.name
      * </pre>
      * 
      */
-    private Integer userId;
+    private String name;
 
     /**
      * <pre>
-     * 国家
-     * 表字段 : address.country
+     * 
+     * 表字段 : address.mobile
      * </pre>
      * 
      */
-    private Integer country;
+    private String mobile;
 
     /**
      * <pre>
-     * 省
-     * 表字段 : address.province
-     * </pre>
      * 
-     */
-    private Integer province;
-
-    /**
-     * <pre>
-     * 市
-     * 表字段 : address.city
-     * </pre>
-     * 
-     */
-    private Integer city;
-
-    /**
-     * <pre>
-     * 县区
-     * 表字段 : address.county
-     * </pre>
-     * 
-     */
-    private Integer county;
-
-    /**
-     * <pre>
-     * 详细住址
      * 表字段 : address.address
      * </pre>
      * 
      */
     private String address;
-
-    /**
-     * <pre>
-     * 
-     * 表字段 : address.begin_date
-     * </pre>
-     * 
-     */
-    private Date beginDate;
-
-    /**
-     * <pre>
-     * 
-     * 表字段 : address.end_date
-     * </pre>
-     * 
-     */
-    private Date endDate;
 
     public Integer getId() {
         return id;
@@ -92,44 +45,20 @@ public class Address {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getCountry() {
-        return country;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setCountry(Integer country) {
-        this.country = country;
-    }
-
-    public Integer getProvince() {
-        return province;
-    }
-
-    public void setProvince(Integer province) {
-        this.province = province;
-    }
-
-    public Integer getCity() {
-        return city;
-    }
-
-    public void setCity(Integer city) {
-        this.city = city;
-    }
-
-    public Integer getCounty() {
-        return county;
-    }
-
-    public void setCounty(Integer county) {
-        this.county = county;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getAddress() {
@@ -138,21 +67,5 @@ public class Address {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Date getBeginDate() {
-        return beginDate;
-    }
-
-    public void setBeginDate(Date beginDate) {
-        this.beginDate = beginDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 }
